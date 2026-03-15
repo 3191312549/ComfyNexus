@@ -32,6 +32,14 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add comfyui_api_nodes.json
-          # 检查文件是否有变更，如果有变更才执行 commit 和 push
+          
+          echo "==== 检查当前目录文件 ===="
+          ls -R
+          
+          echo "==== 检查 Git 状态 ===="
+          git status
+          
+          # 使用 -f 强制 add，并观察报错
+          git add comfyui_api_nodes.json || echo "无法添加文件，可能文件根本不存在"
+          
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update ComfyUI nodes list" && git push)
