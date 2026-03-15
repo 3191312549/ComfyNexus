@@ -106,6 +106,9 @@
 ### 🤝 参与贡献
 欢迎提交 [Issue](https://github.com/Allen-xxa/ComfyNexus/issues) 或 [Pull Request](https://github.com/Allen-xxa/ComfyNexus/pulls) 帮助我们做得更好。
 
+觉得不错可以请作者喝杯咖啡
+<img src="wx.png" alt="wx" width="320">
+
 **Made with ❤️ by ComfyNexus Team**
 
 [⬆ 返回顶部](#comfynexus)
