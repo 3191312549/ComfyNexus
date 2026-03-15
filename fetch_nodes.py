@@ -43,7 +43,7 @@ if __name__ == "__main__":
     nodes = fetch_comfy_registry()
     
     # 将全量数据写入本地文件
-    with open("comfynexus_nodes.json", "w", encoding="utf-8") as f:
+    with open("comfyui_api_nodes.json", "w", encoding="utf-8") as f:
         json.dump(nodes, f, ensure_ascii=False, indent=2)
         
     print(f"任务完成！总共保存了 {len(nodes)} 个插件。")
