@@ -1,0 +1,43 @@
+name: Update ComfyNexus Meta Data
+
+on:
+  schedule:
+    # 每天 UTC 时间凌晨 2 点运行 (北京时间上午 10 点)
+    - cron: '0 2 * * *'
+  workflow_dispatch: 
+    # 允许你在 GitHub 网页上点击按钮手动触发测试
+
+permissions:
+  contents: write # 必须要有写入权限，Action 才能提交生成的 JSON 文件
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          
+      - name: 安装依赖
+        # requests 用于网络请求，markdown 用于将 md 转为 html
+        run: pip install requests markdown
+        
+      - name: 运行抓取脚本
+        run: python fetch_releases.py
+        env:
+          # 使用 GitHub Actions 自带的 Token，拥有 1000次/小时 API 额度
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 提交并推送生成的 JSON
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add comfyui_releases.json
+          # 如果文件没有变化，commit 会报错，所以加上 || exit 0
+          git commit -m "chore: 自动更新 ComfyUI Release 数据" || exit 0
+          git push
