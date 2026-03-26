@@ -1,5 +1,11 @@
 [
   {
+    "tag_name": "v0.18.2",
+    "name": "v0.18.2",
+    "date": "2026-03-25T04:22:37Z",
+    "content": "<p><strong>Full Changelog</strong>: https://github.com/Comfy-Org/ComfyUI/compare/v0.18.1...v0.18.2</p>"
+  },
+  {
     "tag_name": "v0.18.1",
     "name": "v0.18.1",
     "date": "2026-03-23T16:58:47Z",
