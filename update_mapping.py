@@ -1,80 +1,55 @@
 import urllib.request
 import re
 import json
-import os
+import sys
 
-# PyTorch Wiki 版本的 Raw Markdown 地址
-WIKI_URL = "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
+URL = "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
 OUTPUT_FILE = "pytorch_mapping.json"
 
-def fetch_and_parse_wiki():
-    print(f"Fetching data from {WIKI_URL}...")
-    req = urllib.request.Request(WIKI_URL)
-    with urllib.request.urlopen(req) as response:
-        content = response.read().decode('utf-8')
-
-    lines = content.split('\n')
+def get_mapping():
+    req = urllib.request.Request(URL)
+    content = urllib.request.urlopen(req).read().decode('utf-8')
+    
     mapping = {}
-    in_table = False
-    headers = []
-
-    for line in lines:
-        line = line.strip()
-        # 判断是否是 Markdown 表格行
-        if not line.startswith('|') or not line.endswith('|'):
-            in_table = False
-            continue
+    
+    for line in content.split('\n'):
+        # 只要一行里包含 3 个以上的 '|'，必定是我们要的表格行
+        if line.count('|') >= 3:
+            # 以 | 分割单元格，清理首尾空格
+            cells = [c.strip() for c in line.split('|')]
             
-        # 提取单元格并清理空白
-        cells = [cell.strip() for cell in line.split('|')[1:-1]]
-        
-        # 定位目标表格（必须包含这些关键字）
-        line_lower = line.lower()
-        if 'pytorch' in line_lower and 'torchvision' in line_lower and 'torchaudio' in line_lower:
-            in_table = True
-            headers = [c.lower() for c in cells]
-            continue
+            # 兼容有没有前后 '|' 边框的两种写法
+            if cells and cells[0] == '': cells.pop(0)
+            if cells and cells[-1] == '': cells.pop()
             
-        # 跳过 Markdown 表格的分隔符行 (如 |---|---|)
-        if in_table and '---' in line:
-            continue
-            
-        if in_table and headers:
-            try:
-                # 动态获取列索引，防止官方调整表格列顺序
-                torch_idx = next(i for i, h in enumerate(headers) if 'pytorch' in h)
-                vision_idx = next(i for i, h in enumerate(headers) if 'torchvision' in h)
-                audio_idx = next(i for i, h in enumerate(headers) if 'torchaudio' in h)
+            # 确保列数足够覆盖到 torchaudio (第4列)
+            if len(cells) >= 4:
+                # 官方表格的固定索引：[0]是torch, [1]是vision, [3]是audio
+                t_str = cells[0]
+                v_str = cells[1]
+                a_str = cells[3]
                 
-                torch_v = cells[torch_idx]
-                vision_v = cells[vision_idx]
-                audio_v = cells[audio_idx]
+                # 暴力提取版本号（过滤掉诸如 [2.2.0](link), **, master 等干扰）
+                # 只抓取类似于 2.2.0 或者 1.13.1 的纯数字加点组合
+                t_match = re.search(r'(\d+\.\d+(?:\.\d+)?)', t_str)
+                v_match = re.search(r'(\d+\.\d+(?:\.\d+)?)', v_str)
+                a_match = re.search(r'(\d+\.\d+(?:\.\d+)?)', a_str)
                 
-                # 清理 Markdown 链接语法，例如将 "[2.2.0](link)" 转换为 "2.2.0"
-                torch_v = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', torch_v)
-                vision_v = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', vision_v)
-                audio_v = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', audio_v)
-                
-                # 排除非版本号的内容（如 master 分支或空字符串）
-                if torch_v and torch_v != "master" and not torch_v.startswith("Nightly"):
-                    mapping[torch_v] = {
-                        "torchvision": vision_v,
-                        "torchaudio": audio_v
+                # 如果三个组件的版本号都能匹配到，才写入字典
+                if t_match and v_match and a_match:
+                    mapping[t_match.group(1)] = {
+                        "torchvision": v_match.group(1),
+                        "torchaudio": a_match.group(1)
                     }
-            except (ValueError, StopIteration, IndexError):
-                # 如果某一行解析失败，跳过该行
-                pass
-
     return mapping
 
 if __name__ == "__main__":
-    version_mapping = fetch_and_parse_wiki()
-    
-    if not version_mapping:
-        print("Error: Could not parse any version mapping from the Wiki.")
-        exit(1)
+    mapping = get_mapping()
+    if not mapping:
+        print("解析失败：没有从页面中抓取到任何有效的版本数据。")
+        sys.exit(1)
         
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(version_mapping, f, indent=4, sort_keys=True)
-        
-    print(f"Successfully generated {OUTPUT_FILE} with {len(version_mapping)} PyTorch versions.")
+        # sort_keys=True 可以保证生成的 JSON 顺序固定，减少不必要的 git diff
+        json.dump(mapping, f, indent=4, sort_keys=True)
+    print(f"解析成功！生成了 {len(mapping)} 个版本映射。")
