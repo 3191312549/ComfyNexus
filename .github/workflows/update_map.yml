@@ -1,0 +1,31 @@
+name: Update PyTorch Version Mapping
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天凌晨自动执行
+  workflow_dispatch: # 支持手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run update script
+        run: python update_mapping.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add pytorch_mapping.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update PyTorch mapping: $(date)" && git push)
