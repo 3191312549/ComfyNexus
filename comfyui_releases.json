@@ -1,5 +1,11 @@
 [
   {
+    "tag_name": "v0.19.1",
+    "name": "v0.19.1",
+    "date": "2026-04-16T14:11:33Z",
+    "content": "<h2>What's Changed</h2>\n<ul>\n<li>Fix issue with ernie image. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/13393</li>\n<li>Make text generation work with ministral model. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/13395</li>\n<li>[Partner Nodes] add Sonilo Audio nodes by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/13391</li>\n<li>Update workflow templates to v0.9.50 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/13399</li>\n<li>Bump comfyui-frontend-package to 1.42.11 by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI/pull/13398</li>\n<li>Add string output to preview text node. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/13406</li>\n<li>Update workflow templates to v0.9.54 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/13412</li>\n<li>Fix ernie on devices that don't support fp64. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/13414</li>\n</ul>\n<p><strong>Full Changelog</strong>: https://github.com/Comfy-Org/ComfyUI/compare/v0.19.0...v0.19.1</p>"
+  },
+  {
     "tag_name": "v0.19.0",
     "name": "v0.19.0",
     "date": "2026-04-13T07:50:34Z",
