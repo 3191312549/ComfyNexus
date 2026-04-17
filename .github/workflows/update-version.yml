@@ -1,0 +1,84 @@
+name: Update Version Info
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get release info
+        id: release
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_BODY: ${{ github.event.release.body }}
+          RELEASE_PUBLISHED_AT: ${{ github.event.release.published_at }}
+          RELEASE_ASSETS: ${{ toJson(github.event.release.assets) }}
+        run: |
+          python3 << 'EOF'
+          import json
+          import os
+
+          release_tag = os.environ.get('RELEASE_TAG', '')
+          release_body = os.environ.get('RELEASE_BODY', '')
+          published_at = os.environ.get('RELEASE_PUBLISHED_AT', '')
+
+          try:
+              assets = json.loads(os.environ.get('RELEASE_ASSETS', '[]'))
+          except json.JSONDecodeError:
+              assets = []
+
+          download_url = ""
+          file_size = 0
+          file_hash = ""
+
+          for asset in assets:
+              name = asset.get('name', '')
+              if name.endswith('-win64.zip'):
+                  download_url = asset.get('browser_download_url', '')
+                  file_size = asset.get('size', 0)
+                  digest = asset.get('digest', '')
+                  if digest and digest.startswith('sha256:'):
+                      file_hash = digest[7:]
+                  break
+
+          version_info = {
+              "version": release_tag,
+              "published_at": published_at,
+              "download_url": download_url,
+              "file_size": file_size,
+              "file_hash": file_hash,
+              "release_notes": release_body
+          }
+
+          with open('version.json', 'w', encoding='utf-8') as f:
+              json.dump(version_info, f, ensure_ascii=False, indent=2)
+
+          print(f"Generated version.json for {release_tag}")
+          if download_url:
+              print(f"Download URL: {download_url}")
+              print(f"File size: {file_size} bytes")
+              if file_hash:
+                  print(f"SHA256: {file_hash[:16]}...")
+          else:
+              print("Warning: No win64.zip asset found")
+          EOF
+
+      - name: Commit version.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add version.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update version.json for release ${{ github.event.release.tag_name }}"
+          git push
