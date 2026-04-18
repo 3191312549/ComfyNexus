@@ -1,5 +1,17 @@
 [
   {
+    "tag_name": "v0.19.3",
+    "name": "v0.19.3",
+    "date": "2026-04-17T20:06:34Z",
+    "content": "<h2>What's Changed</h2>\n<ul>\n<li>nodes_textgen: Implement use_default_template for LTX by @rattus128 in https://github.com/Comfy-Org/ComfyUI/pull/13451</li>\n<li>fix(api-nodes): corrected StabilityAI price badges by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/13454</li>\n<li>[Partner Nodes] add new \"arrow-1.1\" and \"arrow-1.1-max\" SVG models by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/13447</li>\n<li>Update workflow templates to v0.9.57 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/13455</li>\n<li>[Partner Nodes] make \"obj\" output optional in Hunyuan3D Text and Image to 3D by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/13449</li>\n</ul>\n<p><strong>Full Changelog</strong>: https://github.com/Comfy-Org/ComfyUI/compare/v0.19.2...v0.19.3</p>"
+  },
+  {
+    "tag_name": "v0.19.2",
+    "name": "v0.19.2",
+    "date": "2026-04-17T15:34:59Z",
+    "content": "<h2>What's Changed</h2>\n<ul>\n<li>Fix OOM regression in _apply() for quantized models during inference by @jkyamog in https://github.com/Comfy-Org/ComfyUI/pull/13372</li>\n<li>Add a way to disable default template in text gen node. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/13424</li>\n<li>Use <code>ErnieTEModel_</code> not <code>ErnieTEModel</code>. by @bedovyy in https://github.com/Comfy-Org/ComfyUI/pull/13431</li>\n<li>[Partner Nodes] add 1080p resolution for SeeDance 2.0 model by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/13437</li>\n<li>Add JsonExtractString node. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/13435</li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li>@jkyamog made their first contribution in https://github.com/Comfy-Org/ComfyUI/pull/13372</li>\n<li>@bedovyy made their first contribution in https://github.com/Comfy-Org/ComfyUI/pull/13431</li>\n</ul>\n<p><strong>Full Changelog</strong>: https://github.com/Comfy-Org/ComfyUI/compare/v0.19.1...v0.19.2</p>"
+  },
+  {
     "tag_name": "v0.19.1",
     "name": "v0.19.1",
     "date": "2026-04-16T14:11:33Z",
