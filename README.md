@@ -7,7 +7,7 @@
 
 **“ 摆脱命令行束缚，让每一份灵感都能在稳定的环境中平稳着陆 ”**
 
-[![Version](https://img.shields.io/badge/version-RC_0.7.0-3b82f6?style=for-the-badge)](VERSION)
+[![Version](https://img.shields.io/badge/version-v1.0.0-3b82f6?style=for-the-badge)](VERSION)
 [![License](https://img.shields.io/badge/license-MIT-10b981?style=for-the-badge)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows-6366f1?style=for-the-badge)](https://www.microsoft.com/windows)
 [![Downloads](https://img.shields.io/github/downloads/Allen-xxa/ComfyNexus/total?style=for-the-badge&color=f59e0b)](https://github.com/Allen-xxa/ComfyNexus/releases)
