@@ -1,8 +1,8 @@
 {
-  "version": "v1.0.1",
-  "published_at": "2026-04-26T14:56:26Z",
-  "download_url": "https://github.com/Allen-xxa/ComfyNexus/releases/download/v1.0.1/ComfyNexus-vv1.0.1-win64.zip",
-  "file_size": 126232145,
-  "file_hash": "136c7aa68e4688c72fc63be8d9da4af63b4f1ad01b4546623d330339a4c20d51",
-  "release_notes": "## 补落下的债\r\n\r\n首页四个资产卡片加链接跳转到对应模块页面"
+  "version": "v1.0.2",
+  "published_at": "2026-04-28T12:34:05Z",
+  "download_url": "https://github.com/Allen-xxa/ComfyNexus/releases/download/v1.0.2/ComfyNexus-v1.0.2-win64.zip",
+  "file_size": 126230577,
+  "file_hash": "9938fc90ec5e6d6810142e765b0d820f64a75bfc9bcd3ad98bb2ba700cc10d36",
+  "release_notes": "# ComfyNexus v1.0.2 更新日志\r\n\r\n**发布日期**：2026-04-28  \r\n**版本类型**：Stable\r\n\r\n---\r\n\r\n## ✨ 新功能\r\n\r\n**LoRA 管理新增本地预览图自动导入功能** - 同步本地模型时，自动检测模型文件同目录下的同名预览图/视频文件（如 `模型名.png`、`模型名.mp4` 等），并导入到应用内作为预览图。支持 jpg/png/webp/gif/bmp/mp4/webm/mov/mkv/avi 等常见格式，追加模式不会覆盖已有预览图，重复同步时自动跳过已导入的文件。\r\n\r\n## 🐛 问题修复\r\n\r\n**修复 Windows 10 高 DPI 缩放下窗口无法拖动调整大小的问题** - 解决了在系统缩放比例不为 100% 时，窗口四角拖动手柄失灵、缩放卡顿的兼容性问题。\r\n\r\n**修复窗口拖动时鼠标偏移的问题** - 确保在不同 DPI 缩放比例下拖动窗口时，鼠标与窗口位置完全同步。\r\n\r\n**修复窗口从最大化状态还原后位置和大小异常的问题** - 还原后的窗口现在会正确停留在鼠标所在显示器的中心位置。\r\n\r\n**修复窗口设置保存的尺寸在不同缩放比例下不一致的问题** - 切换系统缩放比例后，窗口大小能正确适配。\r\n\r\n**修复任务栏图标点击无法最小化窗口的问题** - 现在点击 Windows 任务栏上的应用图标可以正常最小化和恢复窗口了。\r\n\r\n**修复 MinGit 下载链接失效的问题** - MinGit 下载地址不再写死，改为每次下载前从 GitHub API 动态获取最新发布包的实际下载链接，避免因 GitHub 发布包命名规则变化导致下载失败。\r\n\r\n## ⚡ 性能提升\r\n\r\n**优化对 Windows 10 不同版本系统的 DPI 适配** - 在旧版 Win10 系统上也能自动识别正确的屏幕缩放比例，确保窗口操作的一致性体验。\r\n\r\n**完善多显示器环境下窗口缩放行为的兼容性** - 在不同分辨率和缩放比例的显示器之间移动窗口时表现更加稳定。\r\n\r\n## 💡 升级说明\r\n\r\n本次更新重点修复了 Windows 10 高 DPI 缩放下的窗口操作兼容性问题，建议在使用非 100% DPI 缩放的 Windows 10 用户更新以获得流畅的窗口拖动和缩放体验。\r\n"
 }
