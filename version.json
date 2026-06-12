@@ -1,8 +1,8 @@
 {
-  "version": "v1.2.1",
-  "published_at": "2026-06-11T12:41:00Z",
-  "download_url": "https://github.com/Allen-xxa/ComfyNexus/releases/download/v1.2.1/ComfyNexus-v1.2.1-win64.zip",
-  "file_size": 123717908,
-  "file_hash": "0176aef63f65e9610863815ef675bedfc1ed5f2517210565a5480e6ccb4ea383",
-  "release_notes": "## v1.2.1 - 2026-06-11\r\n\r\n📅 **发布日期**：2026年6月11日（北京时间）\r\n🏷️ **类型**：Stable\r\n\r\n### 🐛 问题修复\r\n\r\n- **修复重启应用后已添加的环境丢失的问题**：由于系统内部验证逻辑与默认值不一致，导致环境配置保存后无法正确加载，重启后环境列表变空。\r\n- **修复添加新环境后提示\"当前环境未设置\"的问题**：添加环境后，工作流相关页面无法识别到新环境，需要重启才能正常使用。\r\n- **修复添加环境后版本管理、工作流管理、依赖管理页面出现白屏报错的问题**：页面加载逻辑存在冲突，在\"无环境\"和\"有环境\"两种状态之间切换时导致页面崩溃。\r\n- **修复添加环境时后台出现变量名错误的问题**：环境初始化日志中引用了不存在的变量名，影响日志准确性。\r\n"
+  "version": "v1.2.3",
+  "published_at": "2026-06-12T11:00:45Z",
+  "download_url": "https://github.com/Allen-xxa/ComfyNexus/releases/download/v1.2.3/ComfyNexus-v1.2.3-win64.zip",
+  "file_size": 123730322,
+  "file_hash": "94d7a5a5cde1180e39ffaa45ee8130fa5ea3b31fa697da1b1ee52a00cfef63b3",
+  "release_notes": "# ComfyNexus v1.2.3 更新日志\r\n\r\n**发布日期**：2026-06-12  \r\n**版本类型**：Stable\r\n\r\n---\r\n\r\n## ✨ 新功能\r\n\r\n- **新增浏览器选择功能** - ComfyUI 启动后可指定 Chrome、Edge、Firefox 等浏览器打开，自动检测系统已安装的浏览器\r\n- **新增悬浮窗位置记忆** - 悬浮窗现在会自动记住您上次关闭时的位置，下次启动时无缝恢复，告别重复调整\r\n\r\n## 🐛 问题修复\r\n\r\n- **修复悬浮窗任务栏图标偶发残留** - 悬浮窗的任务栏图标现在能稳定隐藏，不再概率性残留\r\n- **修复插件启用/禁用操作报错** - 插件管理中启用或禁用插件时不再弹出错误提示\r\n"
 }
