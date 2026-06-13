@@ -1,8 +1,8 @@
 {
-  "version": "v1.2.3",
-  "published_at": "2026-06-12T11:00:45Z",
-  "download_url": "https://github.com/Allen-xxa/ComfyNexus/releases/download/v1.2.3/ComfyNexus-v1.2.3-win64.zip",
-  "file_size": 123730322,
-  "file_hash": "94d7a5a5cde1180e39ffaa45ee8130fa5ea3b31fa697da1b1ee52a00cfef63b3",
-  "release_notes": "# ComfyNexus v1.2.3 更新日志\r\n\r\n**发布日期**：2026-06-12  \r\n**版本类型**：Stable\r\n\r\n---\r\n\r\n## ✨ 新功能\r\n\r\n- **新增浏览器选择功能** - ComfyUI 启动后可指定 Chrome、Edge、Firefox 等浏览器打开，自动检测系统已安装的浏览器\r\n- **新增悬浮窗位置记忆** - 悬浮窗现在会自动记住您上次关闭时的位置，下次启动时无缝恢复，告别重复调整\r\n\r\n## 🐛 问题修复\r\n\r\n- **修复悬浮窗任务栏图标偶发残留** - 悬浮窗的任务栏图标现在能稳定隐藏，不再概率性残留\r\n- **修复插件启用/禁用操作报错** - 插件管理中启用或禁用插件时不再弹出错误提示\r\n"
+  "version": "v1.2.4",
+  "published_at": "2026-06-13T01:27:13Z",
+  "download_url": "https://github.com/Allen-xxa/ComfyNexus/releases/download/v1.2.4/ComfyNexus-v1.2.4-win64.zip",
+  "file_size": 123734376,
+  "file_hash": "5cf8eec06a99b36bd6968444e3ced132465d7e1c872f4cb09bd42d32f52e4947",
+  "release_notes": "# ComfyNexus v1.2.4 更新日志\r\n\r\n**发布日期**：2026-06-13  \r\n**版本类型**：Stable\r\n\r\n---\r\n\r\n## 🐛 问题修复\r\n\r\n- **修复依赖列表无法识别外置插件目录** - 环境设置中配置的外置 custom_nodes 目录现在能被正确扫描，插件依赖不再遗漏\r\n\r\n## 🎨 界面优化\r\n\r\n- **优化依赖列表来源列自适应宽度** - 来源列现在根据内容自动调整宽度，不再固定占用空间，信息展示更紧凑\r\n- **优化插件列表对齐方式** - 依赖管理左侧插件列表改为左对齐，视觉层次更清晰\r\n"
 }
