@@ -1,5 +1,11 @@
 [
   {
+    "tag_name": "v0.25.1",
+    "name": "v0.25.1",
+    "date": "2026-06-18T18:32:30Z",
+    "content": "<ul>\n<li>[Partner Nodes] feat(Kling): add support for Kling V3-Turbo model (https://github.com/Comfy-Org/ComfyUI/pull/14528).</li>\n</ul>\n<p><strong>Full Changelog</strong>: https://github.com/Comfy-Org/ComfyUI/compare/v0.25.0...v0.25.1</p>"
+  },
+  {
     "tag_name": "v0.25.0",
     "name": "v0.25.0",
     "date": "2026-06-16T17:05:41Z",
