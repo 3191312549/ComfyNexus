@@ -1,0 +1,4 @@
+# file: G:\AI-Code-test\ComfyNexus\backend\src\core\env\dependency_detector.py
+# hypothesis_version: 6.151.2
+
+['--format=freeze', '--version', '-c', '-m', '==', 'None', 'Python ', 'Windows', 'cuda', 'flash-attn', 'flash_attention', 'list', 'pip', 'python', 'pytorch', 'sageattention', 'torch', 'triton', 'triton-windows', 'xformers']

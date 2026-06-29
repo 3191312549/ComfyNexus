@@ -1,0 +1,4 @@
+# file: G:\AI-Code-test\ComfyNexus\backend\src\core\env\environment_validator.py
+# hypothesis_version: 6.151.2
+
+['--version', 'Path does not exist', '__init__.py', 'custom_nodes', 'main.py', 'models', 'python', 'python.exe', 'python_embeded', 'r', 'utf-8', 'version.txt']

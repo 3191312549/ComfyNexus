@@ -1,0 +1,264 @@
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+更新日志/
+原型页/
+lora_data/
+.trae/
+docs/
+data/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+# WebView2 netcore interop DLLs (needed for .NET 8 compat on Win10)
+!backend/lib/webview2_netcore/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+build_exe.spec
+
+# Virtual Environment
+.venv/
+venv/
+/ENV/
+/env/
+.virtualenv/
+
+# Testing
+.pytest_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+*.cover
+.cache
+nosetests.xml
+coverage.xml
+*.coveragerc
+
+# ============================================
+# Frontend (Node.js / React / Vite)
+# ============================================
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+frontend/.vite-temp/
+frontend/tsconfig.tsbuildinfo
+frontend/coverage/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ============================================
+# Build Outputs
+# ============================================
+dist/
+build/
+build_report.txt
+
+# ============================================
+# IDEs and Editors
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# Operating System
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# Environment Variables
+# ============================================
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ============================================
+# Documentation (all .md except README.md)
+# ============================================
+*.md
+!README.md
+
+# ============================================
+# AI Agent Configuration Directories
+# ============================================
+.kiro/
+.mimocode/
+.clinerules
+AGENTS.md
+
+# ============================================
+# Work Logs
+# ============================================
+work_logs/
+
+# ============================================
+# Test Documentation
+# ============================================
+backend/tests/**/README.md
+backend/tests/manual/*.md
+
+# ============================================
+# Build Documentation
+# ============================================
+build_scripts/README.md
+build_scripts/打包说明.md
+
+# ============================================
+# Frontend Docs & Reports
+# ============================================
+frontend/README.md
+frontend/lint-report.json
+frontend/i18n-fix-log.txt
+
+# ============================================
+# Project Specific
+# ============================================
+# Cache directories
+/cache/
+build_scripts/cache/
+
+# WebView2 user data (browser cache, download preferences, etc.)
+data/webview2/
+
+# Build outputs and artifacts
+build_scripts/打包产物_*/
+build_scripts/build_output/
+
+# Configuration backups
+backend/config/backups/
+
+# Backup files
+backup/
+
+# Temporary files
+temp/
+temp_nuget/
+
+# User-specific configurations (keep templates)
+backend/config/environments.json
+backend/config/modules.json
+backend/config/settings.json
+backend/config/folder_shortcuts.json
+
+# Preset configurations (user-specific)
+backend/config/preset_index.json
+backend/config/presets/*.json
+!backend/config/presets/.gitkeep
+
+# Plugin configurations (user-specific)
+backend/config/plugins/*.json
+!backend/config/plugins/.gitkeep
+
+# Frontend backend config (user-specific runtime files)
+frontend/backend/config/settings.json
+frontend/backend/config/plugins/*.json
+
+
+
+# Debug logs
+debug.log
+backend/test_logger.py
+backend/test_plugin_logger.py
+
+# Test cache
+test_cache/
+.pytest_cache/
+
+# Temporary test files
+test_*.py
+!backend/tests/test_*.py
+!frontend/src/**/*.test.ts
+!frontend/src/**/*.test.tsx
+
+# ============================================
+# Git
+# ============================================
+*.orig
+*.rej
+*.patch
+
+# ============================================
+# Miscellaneous
+# ============================================
+# Compiled files
+*.com
+*.class
+*.dll
+# Allow WebView2 netcore interop DLLs
+!backend/lib/webview2_netcore/*.dll
+*.exe
+*.o
+*.so
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Local configuration
+*.local
+frontend/tsconfig.tsbuildinfo

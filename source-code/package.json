@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.9.0",
+    "sql.js": "^1.14.1"
+  }
+}

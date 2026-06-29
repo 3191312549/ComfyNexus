@@ -1,0 +1,4 @@
+# file: G:\AI-Code-test\ComfyNexus\backend\src\core\env\environment_config_manager.py
+# hypothesis_version: 6.151.2
+
+['%Y%m%d_%H%M%S', '.tmp', 'backups', 'config', 'environments', 'environments.json', 'environments_*.json', 'id', 'name', 'r', 'utf-8', 'w']

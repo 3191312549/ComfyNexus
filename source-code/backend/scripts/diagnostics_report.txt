@@ -1,0 +1,71 @@
+======================================================================
+ComfyNexus 系统依赖诊断报告
+======================================================================
+生成时间: 2026-04-17 22:29:01
+系统版本: Windows 10.0 Build 26200
+系统架构: AMD64
+检测方法: LoadLibraryExW + LOAD_LIBRARY_AS_DATAFILE
+
+总检查项: 12
+通过: 11
+失败: 0
+警告: 1
+======================================================================
+
+[组1] DirectX 11 渲染核心 (P0 级白屏元凶)
+--------------------------------------------------
+  [PASS] d3d11.dll
+  [PASS] dxgi.dll
+  [PASS] d3dcompiler_47.dll
+  [PASS] dwmapi.dll
+
+[组2] Universal C Runtime (P1 级闪退元凶)
+--------------------------------------------------
+  [PASS] ucrtbase.dll
+
+[组3] VC++ Redistributable 2015-2022
+--------------------------------------------------
+  [PASS] vcruntime140.dll
+  [PASS] vcruntime140_1.dll
+  [PASS] msvcp140.dll
+
+[组4] .NET 8 Desktop Runtime
+--------------------------------------------------
+  [PASS] .NET 8 Desktop Runtime: Desktop 8.0.26, NETCore 8.0.26
+         核心库完整性: OK (System.Windows.Forms.dll, coreclr.dll)
+  修复建议: 下载 .NET 8 Desktop Runtime
+  https://aka.ms/dotnet/8.0/windowsdesktop-runtime-win-x64.exe
+
+[组5] Media Foundation (视频多媒体支持)
+--------------------------------------------------
+  [PASS] mfplat.dll
+  [PASS] mf.dll
+
+[组6] 系统级权限预警
+--------------------------------------------------
+  [WARN] 当前非管理员权限运行
+         LibreHardwareMonitor 硬件传感器将不可用
+
+======================================================================
+详细 DLL 检查结果:
+----------------------------------------------------------------------
+  [PASS] d3d11.dll | P0 | Direct3D 11 核心 - WebView2 硬件加速渲染必需
+         路径: C:\Windows\System32\d3d11.dll
+  [PASS] dxgi.dll | P0 | DirectX Graphics Infrastructure - GPU 适配器枚举
+         路径: C:\Windows\System32\dxgi.dll
+  [PASS] d3dcompiler_47.dll | P0 | HLSL 着色器编译器
+         路径: C:\Windows\System32\d3dcompiler_47.dll
+  [PASS] dwmapi.dll | P0 | Desktop Window Manager - 窗口合成
+         路径: C:\Windows\System32\dwmapi.dll
+  [PASS] ucrtbase.dll | P1 | Universal C Runtime - Python C 扩展核心依赖
+         路径: C:\Windows\System32\ucrtbase.dll
+  [PASS] vcruntime140.dll | P0 | VC++ Runtime 140 - C++ 异常处理和 TLS
+         路径: C:\Windows\System32\vcruntime140.dll
+  [PASS] vcruntime140_1.dll | P0 | VC++ Runtime 140_1 - C++ 异常处理 (SEH)
+         路径: C:\Windows\System32\vcruntime140_1.dll
+  [PASS] msvcp140.dll | P0 | MSVC++ Standard Library - STL 容器和流
+         路径: C:\Windows\System32\msvcp140.dll
+  [PASS] mfplat.dll | P2 | Media Foundation Platform - 视频音频播放
+         路径: C:\Windows\System32\mfplat.dll
+  [PASS] mf.dll | P2 | Media Foundation 核心 - 多媒体管线
+         路径: C:\Windows\System32\mf.dll

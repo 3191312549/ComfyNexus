@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "preset": "custom",
+  "modules": {
+    "home": {
+      "enabled": true,
+      "order": 1
+    },
+    "workspace": {
+      "enabled": true,
+      "order": 2
+    },
+    "terminal": {
+      "enabled": true,
+      "order": 3
+    },
+    "version-manage": {
+      "enabled": true,
+      "order": 4
+    },
+    "plugin-manage": {
+      "enabled": true,
+      "order": 6
+    },
+    "plugin-market": {
+      "enabled": true,
+      "order": 7
+    },
+    "dependency-manage": {
+      "enabled": true,
+      "order": 5
+    },
+    "model-manage": {
+      "enabled": true,
+      "order": 9
+    },
+    "ai-assistant": {
+      "enabled": true,
+      "order": 8
+    },
+    "workflow-manage": {
+      "enabled": true,
+      "order": 10
+    },
+    "prompt-manage": {
+      "enabled": true,
+      "order": 11
+    },
+    "output-gallery": {
+      "enabled": true,
+      "order": 12
+    },
+    "monitor-center": {
+      "enabled": true,
+      "order": 13
+    },
+    "env-manage": {
+      "enabled": true,
+      "order": 12
+    },
+    "system-settings": {
+      "enabled": true,
+      "order": 13
+    },
+    "about": {
+      "enabled": true,
+      "order": 14
+    },
+    "feedback": {
+      "enabled": true,
+      "order": 15
+    }
+  },
+  "ui": {
+    "theme": "dark",
+    "language": "zh-CN"
+  }
+}

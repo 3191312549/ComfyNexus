@@ -1,0 +1,4 @@
+# file: G:\AI-Code-test\ComfyNexus\backend\src\core\env\error_codes.py
+# hypothesis_version: 6.151.2
+
+[1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 9999, 'Operation timeout', 'Path not found', 'Permission denied', 'Python not found', 'Success', 'Unknown error', 'Validation failed']

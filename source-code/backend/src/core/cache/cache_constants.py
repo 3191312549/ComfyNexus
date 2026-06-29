@@ -1,0 +1,43 @@
+"""
+缓存相关常量定义
+
+统一管理缓存相关的常量值，避免魔法数字。
+
+Author: ComfyNexus 开发团队
+Date: 2026-03-25
+"""
+
+from datetime import timedelta
+
+
+class CacheConstants:
+    """缓存常量"""
+    
+    ONE_HOUR_SECONDS = 60 * 60
+    ONE_DAY_SECONDS = 24 * 60 * 60
+    ONE_DAY_HOURS = 24
+    
+    VERSION_STABLE_CACHE_TTL = timedelta(hours=24)
+    VERSION_DEV_CACHE_TTL = timedelta(hours=6)
+    
+    VERSION_STABLE_CACHE_TTL_HOURS = 24
+    VERSION_DEV_CACHE_TTL_HOURS = 6
+    
+    TRANSLATION_CACHE_TTL_DAYS = 30
+    TRANSLATION_CACHE_TTL_HOURS = TRANSLATION_CACHE_TTL_DAYS * 24
+    
+    PLUGIN_CACHE_TTL_HOURS = 24
+    MARKETPLACE_CACHE_TTL_HOURS = 24
+    
+    MAX_TAG_CACHE_COUNT = 500
+    MAX_COMMIT_CACHE_COUNT = 1000
+    
+    MAX_LOG_FILE_SIZE = 100 * 1024 * 1024
+    LOG_KEEP_DAYS = 30
+
+
+CACHE_DURATION = CacheConstants.ONE_DAY_SECONDS
+STABLE_CACHE_DURATION = CacheConstants.VERSION_STABLE_CACHE_TTL
+DEV_CACHE_DURATION = CacheConstants.VERSION_DEV_CACHE_TTL
+MAX_TAG_CACHE_COUNT = CacheConstants.MAX_TAG_CACHE_COUNT
+MAX_COMMIT_CACHE_COUNT = CacheConstants.MAX_COMMIT_CACHE_COUNT

@@ -1,0 +1,70 @@
+[tool.pytest.ini_options]
+# 测试路径
+testpaths = ["tests"]
+
+# 测试文件匹配模式
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+# pytest 运行选项
+addopts = [
+    "-v",                    # 详细输出
+    "--strict-markers",      # 严格标记模式
+    "--tb=short",           # 简短的回溯信息
+    "-s",                   # 显示 print 输出
+    "--color=yes",          # 彩色输出
+]
+
+# 测试标记定义
+markers = [
+    "property: Property-based tests using hypothesis",
+    "unit: Unit tests",
+    "integration: Integration tests",
+    "manual: Manual tests requiring human intervention",
+    "diagnostic: Diagnostic tests for troubleshooting",
+    "slow: Slow running tests",
+]
+
+[tool.coverage.run]
+# 覆盖率源代码路径
+source = ["src"]
+
+# 排除的文件
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/.venv/*",
+    "*/test_*.py",
+]
+
+[tool.coverage.report]
+# 报告精度
+precision = 2
+
+# 显示缺失的行
+show_missing = true
+
+# 不跳过已覆盖的文件
+skip_covered = false
+
+# 排除的行（使用注释标记）
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+]
+
+[tool.coverage.html]
+# HTML 报告输出目录
+directory = "htmlcov"
+
+[tool.hypothesis]
+# hypothesis 配置
+max_examples = 100
+# deadline = None  # 注释掉，使用默认值

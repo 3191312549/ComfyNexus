@@ -1,0 +1,11 @@
+"""
+ComfyNexus Bridge - ComfyUI 自定义节点桥接插件
+
+"""
+
+WEB_DIRECTORY = "./js"
+
+NODE_CLASS_MAPPINGS = {}
+NODE_DISPLAY_NAME_MAPPINGS = {}
+
+__all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS', 'WEB_DIRECTORY']

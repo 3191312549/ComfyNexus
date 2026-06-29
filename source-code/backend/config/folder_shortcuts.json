@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "lastModified": "2026-01-29T18:12:13.847737Z",
+  "shortcuts": [
+    {
+      "id": "input",
+      "name": "输入",
+      "path": "",
+      "icon": "FolderInput",
+      "order": 0,
+      "isDefault": true
+    },
+    {
+      "id": "output",
+      "name": "输出",
+      "path": "",
+      "icon": "FolderOutput",
+      "order": 1,
+      "isDefault": true
+    },
+    {
+      "id": "models",
+      "name": "模型",
+      "path": "",
+      "icon": "FolderCog",
+      "order": 2,
+      "isDefault": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+/**
+ * 悬浮窗样式
+ * 深色毛玻璃效果，参照原型设计
+ * 注意：pywebview 透明窗口不支持 CSS 圆角，使用直角
+ * 无标题栏，整个窗口可拖拽
+ * 使用 CSS 变量支持主题切换
+ */
+
+.floating-window {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+  border: none;
+  box-shadow: none !important;
+  background-clip: padding-box;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  cursor: move;
+}
+
+.floating-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  cursor: default;
+}
+
+.floating-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.floating-item-label {
+  font-weight: 500;
+  color: hsl(var(--text-secondary));
+  width: 65px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.floating-item-temp {
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 10px;
+  color: hsl(var(--text-muted));
+  font-weight: 600;
+}
+
+.floating-item-spark {
+  flex-grow: 1;
+  height: 3px;
+  background: hsl(var(--bg-surface) / 0.1);
+  border-radius: 2px;
+  margin: 0 12px;
+  overflow: hidden;
+}
+
+.floating-item-spark-fill {
+  height: 100%;
+  background: hsl(var(--color-primary));
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.floating-item-spark-fill.danger {
+  background: hsl(var(--color-danger));
+}
+
+.floating-item-spark-fill.warning {
+  background: hsl(var(--color-warning));
+}
+
+.floating-item-value {
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+  width: 45px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.floating-item-value.net {
+  width: 65px;
+  color: hsl(var(--color-success));
+}
+
+.floating-item-unit {
+  font-size: 9px;
+  margin-left: 2px;
+  color: hsl(var(--text-muted));
+}
